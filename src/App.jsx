@@ -1,13 +1,15 @@
-import { router } from "./router";
-import { RouterProvider } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import Detalhes from "./pages/detail";
 
-function App() {
-
+export default function App() {
   return (
-    <>
-      <RouterProvider router={router}/> 
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/personagem/:id" element={<Detalhes />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
-
-export default App
